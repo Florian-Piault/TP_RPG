@@ -5,6 +5,7 @@ interface IChampion {
 }
 
 export abstract class Champion implements IChampion {
+  hpMax: number;
   constructor(
     protected firstName: string,
     protected lastName: string,
@@ -12,7 +13,9 @@ export abstract class Champion implements IChampion {
     protected atk: number,
     protected def: number,
     protected hp: number
-  ) {}
+  ) {
+    this.hpMax = hp;
+  }
 
   public protect(): void {}
 
