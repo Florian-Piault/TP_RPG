@@ -52,20 +52,9 @@ export abstract class Champion implements IChampion {
   public isAlive(): boolean {
     return this.hp > 0;
   }
-<<<<<<< HEAD
   
   public canDo(): Boolean{
     return this.numberOfActions == 0 ? false : true
   }
 
-=======
-
-  canDo(): Boolean {
-    return this.numberOfActions == 0 ? false : true;
-  }
-
-  getIsProtected(): Boolean {
-    return this.isProtected;
-  }
->>>>>>> 370a5430f50356840691e5baf249bfc4d9f7a66e
 }
