@@ -11,7 +11,8 @@ export abstract class Champion implements IChampion {
     protected numberOfActions: number,
     protected atk: number,
     protected def: number,
-    protected hp: number
+    protected hp: number,
+    protected hpMax: number
   ) {}
 
   public protect(): void {}

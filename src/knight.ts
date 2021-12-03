@@ -7,9 +7,10 @@ export class Knight extends Champion {
     lastName: string,
     atk: number,
     def: number,
-    hp: number
+    hp: number,
+    hpMax: number
   ) {
-    super(firstName, lastName, 1, atk, def, hp);
+    super(firstName, lastName, 1, atk, def, hp, hpMax);
   }
 
   public protect(): void {}
