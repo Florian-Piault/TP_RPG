@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Champion = void 0;
-const knight_1 = require("./knight");
 class Champion {
     constructor(firstName, lastName, numberOfTotalActions, atk, def, hp) {
         this.firstName = firstName;
@@ -21,15 +20,12 @@ class Champion {
         this.isProtected = false;
     }
     protect() {
-        this.isProtected = true;
-    }
-    attack(target) {
-        if (target.isProtected) {
-            if (!(target instanceof knight_1.Knight))
-                target.getHit(this.atk / 2);
+        if (this.numberOfActions == this.numberOfTotalActions) {
+            this.numberOfActions -= this.numberOfTotalActions;
+            this.isProtected = true;
         }
         else {
-            target.getHit(this.atk);
+            console.log("Impossible de se proteger ...");
         }
     }
     getHit(amount) {
@@ -42,10 +38,7 @@ class Champion {
         return this.hp > 0;
     }
     canDo() {
-        return this.numberOfActions == 0 ? false : true;
-    }
-    getIsProtected() {
-        return this.isProtected;
+        return this.numberOfActions > 0 ? true : false;
     }
 }
 exports.Champion = Champion;

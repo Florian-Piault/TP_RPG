@@ -1,4 +1,5 @@
 import { Champion } from "./champion";
+import { Knight } from "./knight";
 
 export class Boss extends Champion {
   constructor(
@@ -9,6 +10,19 @@ export class Boss extends Champion {
     hp: number
   ) {
     super(firstName, lastName, 3, atk, def, hp);
+  }
+
+  attack(target: Champion): void {
+    if (this.canDo()) {
+      if (target.isProtected) {
+        if (!(target instanceof Knight)) target.getHit(this.atk / 2);
+      } else {
+        target.getHit(this.atk);
+      }
+      this.numberOfActions--;
+    } else {
+      console.log("Impossible d'attaquer ...");
+    }
   }
 
   public getTarget(targets: Champion[]): Champion {
