@@ -1,26 +1,47 @@
+import { Knight } from "./knight";
+
 interface IChampion {
   protect(): void;
   attack(target: Champion): void;
   getHit(amount: number): void;
+  canDo(): Boolean;
 }
 
 export abstract class Champion implements IChampion {
-  hpMax: number;
+  protected hpMax: number;
+
+  protected numberOfActions: number;
+  protected isProtected: Boolean;
+
   constructor(
     protected firstName: string,
     protected lastName: string,
-    protected numberOfActions: number,
+    protected numberOfTotalActions: number,
     protected atk: number,
     protected def: number,
     protected hp: number
   ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.numberOfActions = numberOfTotalActions;
+    this.numberOfTotalActions = numberOfTotalActions;
+    this.atk = atk;
+    this.def = def;
+    this.hp = hp;
     this.hpMax = hp;
+    this.isProtected = false;
   }
 
-  public protect(): void {}
+  public protect(): void {
+    this.isProtected = true;
+  }
 
   public attack(target: Champion): void {
-    target.getHit(this.atk);
+    if (target.isProtected) {
+      if (!(target instanceof Knight)) target.getHit(this.atk / 2);
+    } else {
+      target.getHit(this.atk);
+    }
   }
 
   public getHit(amount: number): void {
@@ -30,5 +51,13 @@ export abstract class Champion implements IChampion {
 
   public isAlive(): boolean {
     return this.hp > 0;
+  }
+
+  canDo(): Boolean {
+    return this.numberOfActions == 0 ? false : true;
+  }
+
+  getIsProtected(): Boolean {
+    return this.isProtected;
   }
 }
