@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1638541686301" clover="3.2.0">
-  <project timestamp="1638541686301" name="All files">
+<coverage generated="1638542385487" clover="3.2.0">
+  <project timestamp="1638542385487" name="All files">
     <metrics statements="70" coveredstatements="52" conditionals="27" coveredconditionals="15" methods="14" coveredmethods="11" elements="111" coveredelements="78" complexity="0" loc="70" ncloc="70" packages="1" files="4" classes="4"/>
     <file name="archer.ts" path="/Users/laurent/developpement/typescript/TP_RPG/src/archer.ts">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

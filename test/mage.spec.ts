@@ -1,4 +1,3 @@
-import { Champion } from "../src/champion"
 import { Knight } from "../src/knight"
 import { Archer } from "../src/archer"
 import { Mage } from "../src/mage"
