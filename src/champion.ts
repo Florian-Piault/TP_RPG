@@ -8,6 +8,7 @@ interface IChampion {
 }
 
 export abstract class Champion implements IChampion {
+  protected hpMax: number;
 
   public numberOfActions: number;
   public isProtected: Boolean;
@@ -27,6 +28,7 @@ export abstract class Champion implements IChampion {
     this.atk = atk;
     this.def = def;
     this.hp = hp;
+    this.hpMax = hp;
     this.isProtected = false;
   }
 
@@ -36,20 +38,34 @@ export abstract class Champion implements IChampion {
 
   public attack(target: Champion): void {
     if (target.isProtected) {
-      if(!(target instanceof Knight))
-        target.getHit(this.atk / 2);
-    }
-    else {
+      if (!(target instanceof Knight)) target.getHit(this.atk / 2);
+    } else {
       target.getHit(this.atk);
     }
   }
 
   public getHit(amount: number): void {
-    this.hp -= amount;
+    if (amount >= this.hp) this.hp = 0;
+    else this.hp -= amount;
   }
+
+  public isAlive(): boolean {
+    return this.hp > 0;
+  }
+<<<<<<< HEAD
   
   public canDo(): Boolean{
     return this.numberOfActions == 0 ? false : true
   }
 
+=======
+
+  canDo(): Boolean {
+    return this.numberOfActions == 0 ? false : true;
+  }
+
+  getIsProtected(): Boolean {
+    return this.isProtected;
+  }
+>>>>>>> 370a5430f50356840691e5baf249bfc4d9f7a66e
 }

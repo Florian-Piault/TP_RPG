@@ -4,6 +4,7 @@
   "description": "tp rpg",
   "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "jest --coverage"
   },
   "author": "",
