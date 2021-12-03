@@ -4,7 +4,6 @@ export class Mage extends Champion {
   constructor(
     firstName: string,
     lastName: string,
-    numberOfActions: number,
     atk: number,
     def: number,
     hp: number
