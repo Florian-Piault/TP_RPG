@@ -32,15 +32,24 @@ export abstract class Champion implements IChampion {
   }
 
   protect(): void {
-    this.numberOfActions--;
-    this.isProtected = true;
+    if (this.numberOfActions == this.numberOfTotalActions) {
+      this.numberOfActions -= this.numberOfTotalActions;
+      this.isProtected = true;
+    } else {
+      console.log('Impossible de se proteger ...');
+    }
   }
 
   attack(target: Champion): void {
-    if (target.isProtected) {
-      if (!(target instanceof Knight)) target.getHit(this.atk / 2);
+    if (this.canDo()) {
+      if (target.isProtected) {
+          if (!(target instanceof Knight)) target.getHit(this.atk / 2);
+      } else {
+          target.getHit(this.atk);
+      }
+      this.numberOfActions--;
     } else {
-      target.getHit(this.atk);
+       console.log('Impossible d\'attaquer ...');
     }
   }
 
@@ -54,10 +63,6 @@ export abstract class Champion implements IChampion {
   }
 
   canDo(): boolean {
-    return this.numberOfActions == 0 ? false : true;
-  }
-
-  getIsProtected(): boolean {
-    return this.isProtected;
+    return this.numberOfActions > 0 ? true : false;
   }
 }
