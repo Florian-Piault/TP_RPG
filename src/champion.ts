@@ -65,4 +65,8 @@ export abstract class Champion implements IChampion {
   canDo(): boolean {
     return this.numberOfActions > 0 ? true : false;
   }
+
+  getName(): string{
+    return this.firstName+' '+this.lastName
+  }
 }
