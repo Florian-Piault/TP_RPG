@@ -7,7 +7,7 @@
     "removeComments": true,
     "noLib": false,
     "rootDir": "src",
-    "outDir": "build"
+    "outDir": "js"
   },
   "include": ["**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
