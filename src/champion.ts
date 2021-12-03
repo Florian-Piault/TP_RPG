@@ -1,4 +1,4 @@
-import { Knight } from "./knight";
+// import { Knight } from "./knight";
 
 interface IChampion {
   protect(): void;
@@ -36,23 +36,11 @@ export abstract class Champion implements IChampion {
       this.numberOfActions -= this.numberOfTotalActions;
       this.isProtected = true;
     } else {
-      console.log('Impossible de se proteger ...');
+      console.log("Impossible de se proteger ...");
     }
   }
 
-  attack(target: Champion): void {
-    if (this.canDo()) {
-      if (target.isProtected) {
-          if (!(target instanceof Knight)) target.getHit(this.atk / 2);
-      } else {
-          target.getHit(this.atk);
-      }
-      this.numberOfActions--;
-      target.isProtected = false;
-    } else {
-       console.log('Impossible d\'attaquer ...');
-    }
-  }
+  abstract attack(target: Champion): void;
 
   getHit(amount: number): void {
     if (amount >= this.hp) this.hp = 0;
