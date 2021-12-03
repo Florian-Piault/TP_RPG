@@ -59,4 +59,8 @@ export abstract class Champion implements IChampion {
   getIsProtected(): Boolean{
     return this.isProtected;
   }
+
+  getName(): string{
+    return this.firstName+' '+this.lastName
+  }
 }

@@ -11,6 +11,4 @@ export class Knight extends Champion {
   ) {
     super(firstName, lastName, 1, atk, def, hp);
   }
-
-  public protect(): void {}
 }
