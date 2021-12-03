@@ -23,4 +23,8 @@ export abstract class Champion implements IChampion {
   public getHit(amount: number): void {
     this.hp -= amount;
   }
+
+  public isAlive(): boolean {
+    return this.hp > 0;
+  }
 }
