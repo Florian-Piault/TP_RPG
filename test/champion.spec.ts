@@ -4,9 +4,9 @@ import { Knight } from "../src/knight"
 import { Mage } from "../src/mage"
 
 describe("Champion", () => {
-    let knight: Champion;
-    let knight2: Champion;
-    let mage: Champion;
+    let knight: Knight;
+    let knight2: Knight;
+    let mage: Mage;
 
     beforeEach(() => {
         knight = new Knight("firstname","lastname",10,10,100)
@@ -55,9 +55,7 @@ describe("Champion", () => {
         expect(knight.canDo()).toBe(false);
     })
 
-   /*  test("Whatever champion could attack knight but the knight is strong....", () => {
-        knight.protect();
-        mage.attack(knight);
-        expect(knight.canDo()).toBe(false);
-    }) */
+    test("Champion can tell is name.", () => {
+        expect(knight.getName()).toBe(knight.firstName+" "+knight.lastName);
+    })
 })

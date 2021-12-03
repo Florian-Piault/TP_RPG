@@ -9,3 +9,5 @@ On veut pouvoir jouer au moins **3 types de champions** différents : Un chevali
 - Un champion meurt lorsque ses points de vie tombent à 0, est-il judicieux de l'attaquer à nouveau?
 
 &rarr; _À vous de décider si d'autres champions peuvent être joués ou non, ou si les champions ont d'autres comportements que ceux décrits précédemment._
+
+GROUPE : BALI Soliman, PIAULT Florian, QUENEL Laurent
