@@ -1,4 +1,10 @@
-export class Champion {
+interface IChampion {
+  protect(): void;
+  attack(target: Champion): void;
+  getHit(amount: number): void;
+}
+
+export abstract class Champion implements IChampion {
   constructor(
     protected firstName: string,
     protected lastName: string,
@@ -8,6 +14,12 @@ export class Champion {
   ) {}
 
   public protect(): void {}
-  public attack(target: Champion): void {}
-  public getHit(amount: number): void {}
+
+  public attack(target: Champion): void {
+    target.getHit(this.atk);
+  }
+
+  public getHit(amount: number): void {
+    this.hp -= amount;
+  }
 }

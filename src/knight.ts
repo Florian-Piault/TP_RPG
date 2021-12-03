@@ -1,5 +1,6 @@
 import { Champion } from "./champion";
 
+// method protect() prevents all damage taken
 export class Knight extends Champion {
   constructor(
     protected firstName: string,
@@ -10,4 +11,6 @@ export class Knight extends Champion {
   ) {
     super(firstName, lastName, atk, def, hp);
   }
+
+  public protect(): void {}
 }

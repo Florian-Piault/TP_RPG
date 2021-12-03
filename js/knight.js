@@ -11,5 +11,6 @@ class Knight extends champion_1.Champion {
         this.def = def;
         this.hp = hp;
     }
+    protect() { }
 }
 exports.Knight = Knight;

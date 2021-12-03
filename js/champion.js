@@ -10,7 +10,11 @@ class Champion {
         this.hp = hp;
     }
     protect() { }
-    attack(target) { }
-    getHit(amount) { }
+    attack(target) {
+        target.getHit(this.atk);
+    }
+    getHit(amount) {
+        this.hp -= amount;
+    }
 }
 exports.Champion = Champion;
