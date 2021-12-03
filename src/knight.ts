@@ -7,7 +7,7 @@ export class Knight extends Champion {
     lastName: string,
     atk: number,
     def: number,
-    hp: number,
+    hp: number
   ) {
     super(firstName, lastName, 1, atk, def, hp);
   }

@@ -7,9 +7,8 @@ export class Archer extends Champion {
     lastName: string,
     atk: number,
     def: number,
-    hp: number,
-    hpMax: number
+    hp: number
   ) {
-    super(firstName, lastName, 2, atk, def, hp, hpMax);
+    super(firstName, lastName, 2, atk, def, hp);
   }
 }
