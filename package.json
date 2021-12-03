@@ -1,0 +1,11 @@
+{
+  "name": "tp_rpg",
+  "version": "1.0.0",
+  "description": "tp rpg",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "",
+  "license": "ISC"
+}
