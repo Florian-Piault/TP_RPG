@@ -11,7 +11,6 @@ export class Mage extends Champion {
     super(firstName, lastName, 1, atk, def, hp);
   }
 
-  public protect(): void {}
   public heal(): void {
     let power = 3;
     if (this.hpMax == this.hp) {
