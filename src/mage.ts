@@ -12,11 +12,7 @@ export class Mage extends Champion {
   ) {
     super(firstName, lastName, 1, atk, def, hp);
   }
-
-  public protect(): void {
-    
-  }
-  public heal(targets: Champion[]): void {
+  public healSomeone(targets: Champion[]): void {
     let power = 3
     let target: Champion
 
@@ -41,18 +37,26 @@ export class Mage extends Champion {
 
     if(input){
       target = alive[input]
+      this.heal(target)
+    }
+  }
+  
+  public heal(target: Champion): void {
+    let power = 3
+
       if (target.hpMax==target.hp) {
         console.log('Vous êtes déjà full life !')
-      }else if(target.hpMax>target.hp){
+      }else{
         let difference = target.hpMax-target.hp
-        if (power<=difference) {
-          target.hp==target.hpMax
+        if (power>=difference) {
+          target.hp=target.hpMax
           console.log('Vous êtes maintenant full life !')
         } else {
           target.hp+=power
           console.log('Vous avez été heal de '+power+' hp !')
         }
       }
-    }
+    
   }
+
 }
