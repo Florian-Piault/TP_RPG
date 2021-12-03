@@ -1,20 +1,28 @@
 import { Champion } from "../src/champion"
+import { Knight } from "../src/knight"
 import { Archer } from "../src/archer"
-import { Knight } from "../src/knight";
+import { Mage } from "../src/mage";
 
-describe("Champion", () => {
+describe("Archer", () => {
     let archer: Archer;
-    let knight: Knight;
+    let mage: Mage;
 
     beforeEach(() => {
         archer = new Archer("firstname","lastname",10,10,100)
-        knight = new Knight("firstname2","lastname2",10,10,100)
+        mage = new Mage("firstname2","lastname2",10,10,100)
     })
 
     test("Archer could attack twice", () => {
-        archer.attack(knight);
-        archer.attack(knight);
-        expect(knight.hp).toEqual(knight.hpMax - (archer.atk*2));
+        archer.attack(mage);
+        archer.attack(mage);
+        expect(mage.hp).toEqual(mage.hpMax - (archer.atk*2));
+    })
+
+    test("Archer could attack twice someone who is first protected", () => {
+        mage.protect();
+        archer.attack(mage);
+        archer.attack(mage);
+        expect(mage.isProtected).toBe(false);
     })
 
 })

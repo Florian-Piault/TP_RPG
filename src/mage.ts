@@ -12,6 +12,7 @@ export class Mage extends Champion {
   ) {
     super(firstName, lastName, 1, atk, def, hp);
   }
+  
   public healSomeone(targets: Champion[]): void {
     let power = 3
     let target: Champion

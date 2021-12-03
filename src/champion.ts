@@ -48,6 +48,7 @@ export abstract class Champion implements IChampion {
           target.getHit(this.atk);
       }
       this.numberOfActions--;
+      target.isProtected = false;
     } else {
        console.log('Impossible d\'attaquer ...');
     }
