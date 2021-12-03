@@ -8,16 +8,27 @@ interface IChampion {
 }
 
 export abstract class Champion implements IChampion {
+
+  protected numberOfActions: number;
+  protected isProtected: Boolean;
+
   constructor(
     protected firstName: string,
     protected lastName: string,
     protected numberOfTotalActions: number,
-    protected numberOfActions: number,
     protected atk: number,
     protected def: number,
     protected hp: number,
-    protected isProtected: Boolean
-  ) {}
+  ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.numberOfActions = numberOfTotalActions;
+    this.numberOfTotalActions = numberOfTotalActions;
+    this.atk = atk;
+    this.def = def;
+    this.hp = hp;
+    this.isProtected = false;
+  }
 
   public protect(): void {
     this.isProtected = true;
@@ -39,5 +50,9 @@ export abstract class Champion implements IChampion {
   
   canDo(): Boolean{
     return this.numberOfActions == 0 ? false : true
+  }
+
+  getIsProtected(): Boolean{
+    return this.isProtected;
   }
 }
