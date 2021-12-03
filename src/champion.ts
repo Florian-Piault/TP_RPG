@@ -4,22 +4,21 @@ interface IChampion {
   protect(): void;
   attack(target: Champion): void;
   getHit(amount: number): void;
-  canDo(): Boolean;
+  canDo(): boolean;
 }
 
 export abstract class Champion implements IChampion {
-  protected hpMax: number;
-
-  protected numberOfActions: number;
-  protected isProtected: Boolean;
+  public hpMax: number;
+  public numberOfActions: number;
+  public isProtected: boolean;
 
   constructor(
-    protected firstName: string,
-    protected lastName: string,
-    protected numberOfTotalActions: number,
-    protected atk: number,
-    protected def: number,
-    protected hp: number
+    public firstName: string,
+    public lastName: string,
+    public numberOfTotalActions: number,
+    public atk: number,
+    public def: number,
+    public hp: number
   ) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -32,11 +31,12 @@ export abstract class Champion implements IChampion {
     this.isProtected = false;
   }
 
-  public protect(): void {
+  protect(): void {
+    this.numberOfActions--;
     this.isProtected = true;
   }
 
-  public attack(target: Champion): void {
+  attack(target: Champion): void {
     if (target.isProtected) {
       if (!(target instanceof Knight)) target.getHit(this.atk / 2);
     } else {
@@ -44,20 +44,20 @@ export abstract class Champion implements IChampion {
     }
   }
 
-  public getHit(amount: number): void {
+  getHit(amount: number): void {
     if (amount >= this.hp) this.hp = 0;
     else this.hp -= amount;
   }
 
-  public isAlive(): boolean {
+  isAlive(): boolean {
     return this.hp > 0;
   }
 
-  canDo(): Boolean {
+  canDo(): boolean {
     return this.numberOfActions == 0 ? false : true;
   }
 
-  getIsProtected(): Boolean {
+  getIsProtected(): boolean {
     return this.isProtected;
   }
 }
