@@ -6,10 +6,9 @@ export class Mage extends Champion {
     lastName: string,
     atk: number,
     def: number,
-    hp: number,
-    hpMax: number
+    hp: number
   ) {
-    super(firstName, lastName, 1, atk, def, hp, hpMax);
+    super(firstName, lastName, 1, atk, def, hp);
   }
 
   public protect(): void {
