@@ -3,13 +3,14 @@ import { Champion } from "./champion";
 // method protect() prevents all damage taken
 export class Knight extends Champion {
   constructor(
-    protected firstName: string,
-    protected lastName: string,
-    protected atk: number,
-    protected def: number,
-    protected hp: number
+    firstName: string,
+    lastName: string,
+    numberOfActions: number,
+    atk: number,
+    def: number,
+    hp: number
   ) {
-    super(firstName, lastName, atk, def, hp);
+    super(firstName, lastName, 1, atk, def, hp);
   }
 
   public protect(): void {}

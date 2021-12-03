@@ -8,6 +8,7 @@ export abstract class Champion implements IChampion {
   constructor(
     protected firstName: string,
     protected lastName: string,
+    protected numberOfActions: number,
     protected atk: number,
     protected def: number,
     protected hp: number
