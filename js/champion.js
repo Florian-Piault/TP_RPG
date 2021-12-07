@@ -40,5 +40,8 @@ class Champion {
     canDo() {
         return this.numberOfActions > 0 ? true : false;
     }
+    getName() {
+        return this.firstName + ' ' + this.lastName;
+    }
 }
 exports.Champion = Champion;
