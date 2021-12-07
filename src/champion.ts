@@ -36,7 +36,7 @@ export abstract class Champion implements IChampion {
       this.numberOfActions -= this.numberOfTotalActions;
       this.isProtected = true;
     } else {
-      console.log("Impossible de se proteger ...");
+      console.log(`${this.getName()} ne peut pas se protéger...`);
     }
   }
 
@@ -55,7 +55,11 @@ export abstract class Champion implements IChampion {
     return this.numberOfActions > 0 ? true : false;
   }
 
-  getName(): string{
-    return this.firstName+' '+this.lastName
+  getName(): string {
+    return this.firstName + " " + this.lastName;
+  }
+
+  resetTurn(): void {
+    this.numberOfActions = this.numberOfTotalActions;
   }
 }

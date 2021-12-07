@@ -25,7 +25,7 @@ class Champion {
             this.isProtected = true;
         }
         else {
-            console.log("Impossible de se proteger ...");
+            console.log(`${this.getName()} ne peut pas se protéger...`);
         }
     }
     getHit(amount) {
@@ -41,7 +41,10 @@ class Champion {
         return this.numberOfActions > 0 ? true : false;
     }
     getName() {
-        return this.firstName + ' ' + this.lastName;
+        return this.firstName + " " + this.lastName;
+    }
+    resetTurn() {
+        this.numberOfActions = this.numberOfTotalActions;
     }
 }
 exports.Champion = Champion;
