@@ -25,4 +25,11 @@ describe("Archer", () => {
         expect(mage.isProtected).toBe(false);
     })
 
+    test("Archer couldn't attack when is exausted", () => {
+        archer.attack(mage);
+        archer.attack(mage);
+        archer.attack(mage);
+        expect(mage.hp).toBe(mage.hpMax-(archer.atk*2));
+    })
+
 })

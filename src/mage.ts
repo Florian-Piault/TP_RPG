@@ -13,6 +13,21 @@ export class Mage extends Champion {
     super(firstName, lastName, 1, atk, def, hp);
   }
   
+
+  attack(target: Champion): void {
+    if (this.canDo()) {
+      if (target.isProtected) {
+        if (!(target instanceof Knight)) target.getHit(this.atk / 2);
+      } else {
+        target.getHit(this.atk);
+      }
+      target.isProtected = false;
+      this.numberOfActions--;
+    } else {
+      console.log("Impossible d'attaquer ...");
+    }
+  }
+
   public healSomeone(targets: Champion[]): void {
     let power = 3
     let target: Champion

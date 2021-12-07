@@ -32,6 +32,12 @@ describe("Mage", () => {
         expect(knight.hp).toEqual(knight.hpMax);
     })
 
+    test("Mage couldn't attack knight when is protected ", () => {
+        archer.protect()
+        mage.attack(archer);
+        expect(archer.hp).toBe(archer.hpMax-(mage.atk/2));
+    })
+
  /*    test("Mage could heal another champion from list.", () => {
         knight.hp -= 3;
         mage.healSomeone([knight,mage]);

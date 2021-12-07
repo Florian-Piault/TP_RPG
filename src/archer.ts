@@ -20,6 +20,7 @@ export class Archer extends Champion {
       } else {
         target.getHit(this.atk);
       }
+      target.isProtected = false;
       this.numberOfActions--;
     } else {
       console.log("Impossible d'attaquer ...");
